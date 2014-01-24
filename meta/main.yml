@@ -1,0 +1,28 @@
+---
+galaxy_info:
+  author: Calogero Lo Leggio (kalos)
+  description: 
+  company: LibreIT
+  license: GPLv3
+  min_ansible_version: 1.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - lucid
+    - precise
+    - quantal
+    - raring
+    - saucy
+    - trusty
+
+  - name: Debian
+    versions:
+    - squeeze
+    - wheezy
+
+  categories:
+  - email:mta
+  - system
+
+dependencies: []

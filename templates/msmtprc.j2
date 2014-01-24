@@ -1,0 +1,11 @@
+aliases /etc/msmtp_aliases
+tls on
+tls_certcheck off
+
+from {{ msmtp_from | default(ansible_hostname + '@' + ansible_domain, true) }}
+
+auth on
+host {{ msmtp_hub_server }}
+port {{ msmtp_hub_port }}
+user {{ msmtp_hub_user }}
+password {{ msmtp_hub_pass }}

@@ -1,0 +1,23 @@
+# install and configure msmtp to deliver local email to a mail hub
+#
+#
+# Copyright (C) 2014 Calogero Lo Leggio <kalos@nerdrug.org>
+#
+# This part of software is released under the terms of the GPLv3 license.
+#
+---
+- name: install msmtp MTA and mailx
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - msmtp-mta
+    - heirloom-mailx
+
+- name: create msmtp config
+  template: > 
+    src=msmtprc.j2 dest=/etc/msmtprc
+    owner=root group=root mode=644
+
+- name: create msmtp aliases
+  template: >
+    src=msmtp_aliases.j2 dest=/etc/msmtp_aliases
+    owner=root group=root mode=644

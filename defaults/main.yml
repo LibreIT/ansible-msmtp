@@ -1,0 +1,7 @@
+---
+msmtp_from: test@gmail.com
+msmtp_to: myserver@my-company.com
+msmtp_hub_server: smtp.gmail.com
+msmtp_hub_port: 587
+msmtp_hub_user: test@gmail.com
+msmtp_hub_pass: test
