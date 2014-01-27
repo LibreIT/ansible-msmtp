@@ -12,6 +12,12 @@
     - msmtp-mta
     - heirloom-mailx
 
+- name: remove all other mtas
+  apt: pkg={{ item }} state=removed
+  with_items:
+    - exim
+    - postfix
+
 - name: create msmtp config
   template: > 
     src=msmtprc.j2 dest=/etc/msmtprc
