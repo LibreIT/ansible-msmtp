@@ -5,3 +5,4 @@ msmtp_hub_server: smtp.gmail.com
 msmtp_hub_port: 587
 msmtp_hub_user: test@gmail.com
 msmtp_hub_pass: test
+msmtp_send_testmail: yes

@@ -12,6 +12,12 @@
     - msmtp-mta
     - heirloom-mailx
 
+- name: remove all other mtas
+  apt: pkg={{ item }} state=removed
+  with_items:
+    - exim
+    - postfix
+
 - name: create msmtp config
   template: > 
     src=msmtprc.j2 dest=/etc/msmtprc
@@ -21,3 +27,9 @@
   template: >
     src=msmtp_aliases.j2 dest=/etc/msmtp_aliases
     owner=root group=root mode=644
+
+- name: Sending a testmail
+  register: msmtp_result
+  shell: cat /etc/hostname | msmtp -a default {{ msmtp_to }}
+  when: msmtp_send_testmail is defined
+  failed_when: "'authentication failed' in msmtp_result.stderr"
