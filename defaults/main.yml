@@ -1,8 +1,9 @@
 ---
-msmtp_from: test@gmail.com
-msmtp_to: myserver@my-company.com
-msmtp_hub_server: smtp.gmail.com
-msmtp_hub_port: 587
-msmtp_hub_user: test@gmail.com
-msmtp_hub_pass: test
-msmtp_send_testmail: yes
+msmtp:
+  from: my-server@my-company.com
+  to: youraddress@example.org
+  hub_server: smtp.example.org
+  hub_port: 25
+  hub_user: servers@example.org
+  hub_pass: password
+  send_testmail: yes

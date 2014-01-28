@@ -1,29 +1,32 @@
 msmtp
 ========
 
-This role enables msmtp to deliver local email to a mail hub.
-A simple way to centralize system email (alarms, notifications, etc).
-
-Requirements
-------------
-
-Msmtp must be the only MTA installed on the system.
+This role enables msmtp to deliver local email to a mail hub.  
+A simple way to centralize system emails (alarms, notifications, etc).
 
 Role Variables
 --------------
 
-  **msmtp_from** - address of the sender for all system emails.  
-  If this variable is not defined the value is *ansible_hostname* @ *ansible_domain* 
+Remember that you must change these variables otherwise msmtp will not be able to send mails!
 
-  **msmtp_to** - address that receives all system emails.
+      msmtp:
+        from: my-server@my-company.com   # address of the sender for all system emails.
+          # If this variable is not defined the value is ansible_hostname@ansible_domain.
+        to: youraddress@example.org      # address that receives all system emails.
+        hub_server: smtp.example.org     # mail hub hostname or ip.
+        hub_port: 25                     # mail hub port - e.g. 25 or 587.
+        hub_user: servers@example.org    # mail hub account user.
+        hub_pass: password               # mail hub account password.
+        send_testmail: yes               # send email in role to test.
 
-  **msmtp_hub_server** - mail hub hostname or ip.
+Use these variables in this way: **msmtp.hub_server** (dot between "msmtp" and "hub_server")
 
-  **msmtp_hub_port** - mail hub port.
+Examples
+========
 
-  **msmtp_hub_user** - mail hub user.
-
-  **msmtp_hub_pass** - mail hub password.
+    - hosts: example
+      roles:
+         - { role: kalos.msmtp, tags: msmtp}
 
 
 Dependencies

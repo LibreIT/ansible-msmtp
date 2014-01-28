@@ -30,6 +30,6 @@
 
 - name: Sending a testmail
   register: msmtp_result
-  shell: cat /etc/hostname | msmtp -a default {{ msmtp_to }}
-  when: msmtp_send_testmail is defined
+  shell: cat /etc/hostname | msmtp -a default {{ msmtp.to }}
+  when: msmtp.send_testmail is defined
   failed_when: "'authentication failed' in msmtp_result.stderr"
