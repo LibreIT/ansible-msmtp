@@ -1,6 +1,7 @@
 ---
-- hosts: localhost
+- hosts: all
   vars_files:
-    - 'defaults/main.yml'
-  tasks:
-    - include: 'tasks/main.yml'
+    - local_vars.yml
+
+  roles:
+    - { role: kalos.msmtp }

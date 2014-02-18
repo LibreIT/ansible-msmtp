@@ -1,9 +1,8 @@
 ---
-msmtp:
-  from: my-server@my-company.com
-  to: youraddress@example.org
-  hub_server: smtp.example.org
-  hub_port: 25
-  hub_user: servers@example.org
-  hub_pass: password
-  send_testmail: yes
+msmtp_from: my-server@my-company.com
+msmtp_to: youraddress@example.org
+msmtp_hub_server: smtp.example.org
+msmtp_hub_port: 25
+msmtp_hub_user: servers@example.org
+msmtp_hub_pass: password
+msmtp_send_testmail: no

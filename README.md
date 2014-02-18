@@ -10,17 +10,14 @@ Role Variables
 
 Remember that you must change these variables otherwise msmtp will not be able to send mails!
 
-      msmtp:
-        from: my-server@my-company.com   # address of the sender for all system emails.
-          # If this variable is not defined the value is ansible_hostname@ansible_domain.
-        to: youraddress@example.org      # address that receives all system emails.
-        hub_server: smtp.example.org     # mail hub hostname or ip.
-        hub_port: 25                     # mail hub port - e.g. 25 or 587.
-        hub_user: servers@example.org    # mail hub account user.
-        hub_pass: password               # mail hub account password.
-        send_testmail: yes               # send email in role to test.
-
-Use these variables in this way: **msmtp.hub_server** (dot between "msmtp" and "hub_server")
+      msmtp_from: my-server@my-company.com   # address of the sender for all system emails.
+        # If this variable is not defined the value is ansible_hostname@ansible_domain.
+      msmtp_to: youraddress@example.org      # address that receives all system emails.
+      msmtp_hub_server: smtp.example.org     # mail hub hostname or ip.
+      msmtp_hub_port: 25                     # mail hub port - e.g. 25 or 587.
+      msmtp_hub_user: servers@example.org    # mail hub account user.
+      msmtp_hub_pass: password               # mail hub account password.
+      msmtp_send_testmail: yes               # send email in role to test.
 
 Examples
 ========
@@ -29,6 +26,11 @@ Examples
       roles:
          - { role: kalos.msmtp, tags: msmtp}
 
+
+Notes
+------------
+
+Password are in cleartext.
 
 Dependencies
 ------------

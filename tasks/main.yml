@@ -22,7 +22,6 @@
     src=msmtp_aliases.j2 dest=/etc/msmtp_aliases
     owner=root group=root mode=644
 
-- name: Sending a testmail
-  shell: cat /etc/hostname | msmtp -a default {{ msmtp.to }}
-  when: msmtp.send_testmail is defined
-  ignore_errors: True
+- name: sending a testmail
+  shell: echo "$(hostname -f) at your service" | mail -s "email from server" {{ msmtp_to }}
+  when: msmtp_send_testmail
