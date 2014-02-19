@@ -8,6 +8,6 @@ install:
   - pip install ansible
 script:
   - echo localhost > inventory
-  - ansible-galaxy -p /home/travis/build/LibreIT/ansible-msmtp/kalos.msmtp install kalos.msmtp
+  - ansible-galaxy -p /home/travis/build/LibreIT/ansible-msmtp install kalos.msmtp
   - ansible-playbook --syntax-check -i inventory playbook.yml
   - ansible-playbook -i inventory --connection=local -u root --sudo -vvvv playbook.yml
