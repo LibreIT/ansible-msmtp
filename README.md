@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/LibreIT/ansible-msmtp.png?branch=master)](https://travis-ci.org/LibreIT/ansible-msmtp)
+
 msmtp
 ========
 
