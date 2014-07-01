@@ -1,5 +1,5 @@
 ---
-msmtp_from: my-server@my-company.com
+msmtp_from: 
 msmtp_to: youraddress@example.org
 msmtp_hub_server: smtp.example.org
 msmtp_hub_port: 25

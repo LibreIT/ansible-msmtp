@@ -11,7 +11,7 @@ Role Variables
 Remember that you must change these variables otherwise msmtp will not be able to send mails!
 
       msmtp_from: my-server@my-company.com   # address of the sender for all system emails.
-        # If this variable is not defined the value is ansible_hostname@ansible_domain.
+        # If this variable is not defined the value is ansible_hostname@ansible_domain (default).
       msmtp_to: youraddress@example.org      # address that receives all system emails.
       msmtp_hub_server: smtp.example.org     # mail hub hostname or ip.
       msmtp_hub_port: 25                     # mail hub port - e.g. 25 or 587.
