@@ -1,6 +1,6 @@
 aliases /etc/msmtp_aliases
 tls on
-tls_certcheck off
+tls_certcheck {{ msmtp_tls_certcheck }}
 
 from {{ msmtp_from | default(ansible_hostname + '@' + ansible_domain, true) }}
 

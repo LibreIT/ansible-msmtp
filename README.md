@@ -18,6 +18,7 @@ Remember that you must change these variables otherwise msmtp will not be able t
       msmtp_hub_port: 25                     # mail hub port - e.g. 25 or 587.
       msmtp_hub_user: servers@example.org    # mail hub account user.
       msmtp_hub_pass: password               # mail hub account password.
+      msmtp_tls_certcheck: on                # enables or disables checks for the server certificate
       msmtp_send_testmail: yes               # send email in role to test.
 
 Examples

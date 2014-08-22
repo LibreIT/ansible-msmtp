@@ -5,4 +5,5 @@ msmtp_hub_server: smtp.example.org
 msmtp_hub_port: 25
 msmtp_hub_user: servers@example.org
 msmtp_hub_pass: password
+msmtp_tls_certcheck: on
 msmtp_send_testmail: no
